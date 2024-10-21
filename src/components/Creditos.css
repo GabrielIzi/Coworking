@@ -1,0 +1,20 @@
+.Creditos{
+    display: flex;
+    flex-direction: row;
+}
+
+.Creditos2{
+    margin-left: 5%;
+    border-left: 2px solid #112d4e;
+    padding-left: 5px;
+}
+
+.Creditos2 p{
+    font-size: 15px;
+}
+
+.Creditos h1{
+    font-size: 20px;
+    margin-left: 20px;
+    animation: none;
+}

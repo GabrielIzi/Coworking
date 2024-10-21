@@ -1,0 +1,35 @@
+.bg_planos{
+    background-color: #112d4e;
+    border-radius: 20px 20px 0 0;
+    padding-top: 5px;
+    padding-bottom: 0.1px;
+}
+
+.bg_planos2{
+    text-align: left;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    background-color: #d9d9d9;
+    max-width: 400px;
+    margin: 0 5px;
+}
+.bg_planos2 p{
+    padding: 10px;
+}
+
+.bg_planos2 h1{
+    text-align: center;
+}
+
+.bg_planos h1{
+    color: white;
+    animation: none;
+    font-size: 40px;
+}
+
+.bg_planos h2{
+    text-align: center;
+    color: white;
+    animation: none;
+    font-size: 20px;
+}

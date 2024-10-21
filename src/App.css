@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  background-color: #f0f4f8;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  background: linear-gradient(#000, 10%, #ffffff00);
+}
+
+header nav a {
+  text-decoration: none;
+  color: #e6e6e6;
+  gap: 5px;
+}
+
+header img {
+  width: 90px;
+  margin-top: 5px;
+}
+
+.PartePrincipal {
+  background: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgb(255, 255, 255) 100%),
+    url('./assets/back-ground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section {
+  padding: 10% 5%;
+  text-align: center;
+  animation: inicial;
+  animation-duration: 1s;
+}
+
+.btn_agendar {
+  background-color: #112d4e;
+  padding: 15px 60px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: filter 0.5s ease;
+}
+
+.btn_agendar:hover {
+  filter: drop-shadow(0px 0px 10px #112d4ee8);
+}
+
+.socialmedia {
+  margin-top: 20px;
+}
+
+section h1 {
+  color: #112d4e;
+  font-size: 50px;
+  font-family: "cursive", "Lucida Handwriting";
+  animation: anim_logo 2s linear infinite;
+}
+section p {
+  color: #112d4e;
+  font-size: 20px;
+}
+
+.socialmedia i {
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #112d4e;
+  padding: 8px 8px;
+  border-radius: 50%;
+}
+
+.socialmedia a {
+  padding: 0 0.3%;
+  font-size: 1.5rem;
+}
+
+.btn_entrar {
+  font-size: 19px;
+  margin-right: 15px;
+  padding: 2% 3.5%;
+  border: 2px solid #112d4e;
+  border-radius: 3px;
+  color: #112d4e;
+  filter: drop-shadow(0px 0px 8px #112d4e);
+  transition: background-color 0.5s ease;
+}
+
+.btn_entrar:hover{
+  background-color: #112d4e;
+  color:#f0f4f8;
+}
+
+.btn_localizacoes{
+  margin-right: 20px;
+  filter: drop-shadow(0px 0px 5px #000000b0);
+}
+
+.section_parte2 h1{
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: none;
+  font-size: 40px;
+}
+
+.section_parte2 {
+  background-color: rgb(255, 255, 255);
+}
+
+.Planos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.section_parte3{
+  margin: 0;
+  padding: 30px;
+  background-color: #112d4e;
+}
+
+.section_parte3 h2{
+  color: #ffffff;
+}
+
+.creditos{
+  background-color: #d9d9d9;
+  padding: 2% 0;
+}
+
+
+
+@keyframes inicial{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+
+@keyframes anim_logo{
+  0%{
+    transform: translateY(0px);
+  }50%{
+    transform: translateY(-10px);
+  }100%{
+    transform: translateY(0px);
+  }
+}
