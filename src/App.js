@@ -11,12 +11,14 @@ import avatar6 from './assets/perfil2.jpg'
 import Avalizacoes from './components/Avaliacoes';
 import Planos from './components/Planos';
 import Creditos from './components/Creditos';
+import Mapa from './components/Mapa';
+
 
 function App() {
   return (
     <div className='App'>
       <div className='PartePrincipal'>
-        <header>
+        <header id='topo'>
           <img src={logo} alt='Logo'/>
             <nav>
               <a href="#local" className='btn_localizacoes'>Localizações</a>
@@ -72,6 +74,19 @@ function App() {
           <Avalizacoes avatar={avatar3} nome='Mariana Costa'>"Achei o espaço de coworking satisfatório. Ele oferece as necessidades básicas, como internet e áreas de trabalho variadas, mas não se destaca em termos de comodidades ou serviços extras. É uma escolha ok para quem não precisa de muitos recursos adicionais."</Avalizacoes>
           <Avalizacoes avatar={avatar5} nome='Lucas Oliveira'>"Gostei bastante do site de coworking! A navegação é intuitiva, e o design é moderno e agradável. As informações sobre os espaços e serviços estão bem organizadas, e é fácil encontrar detalhes importantes, como preços e disponibilidade. Além disso, a seção de reservas é prática e funciona muito bem."</Avalizacoes>
           <Avalizacoes avatar={avatar6} nome='Sofia Almeida'>"O site de coworking é funcional e fornece todas as informações necessárias sobre os serviços oferecidos. No geral, o site é bom, mas com algumas melhorias de desempenho e usabilidade, poderia ser excelente."</Avalizacoes>
+        </div>
+      </section>
+      <section className='mapa' id='local'>
+        <h2>Localizações</h2>
+        <h3><i class="fa-solid fa-map"></i> São Paulo</h3>
+        <p>Rua Frederico Grotte, 156 - Jardim Sao Luiz <i class="fa-regular fa-copy"></i></p>
+        <h3><i class="fa-solid fa-map"></i> Barueri</h3>
+        <p>Av. Henriqueta Mendes Guerra, 100 - Vila Sao Joao <i class="fa-regular fa-copy"></i></p>
+        <br />
+        <Mapa />
+        <br />
+        <div className='topo'>
+          <a href='#topo'>Topo da pagina <i class="fa-solid fa-up-long"></i></a>
         </div>
       </section>
       <section className='creditos'>

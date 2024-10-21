@@ -10,6 +10,9 @@
     border-radius: 10px;
     padding: 20px 5px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.685);
+    animation: anim_avaliacoes linear;
+    animation-timeline: view();
+    animation-range: entry -20% cover 30%;
 }
 .avaliacao p {
     margin: 2%;
@@ -37,4 +40,16 @@
     margin-left: 5%;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
+}
+
+@keyframes anim_avaliacoes{
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }90%{
+        transform: translateY(-10px);
+    }100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
