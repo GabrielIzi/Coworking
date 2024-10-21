@@ -77,7 +77,6 @@ function App() {
         </div>
       </section>
       <section className='mapa' id='local'>
-        <h2>Localizações</h2>
         <h3><i class="fa-solid fa-map"></i> São Paulo</h3>
         <p>Rua Frederico Grotte, 156 - Jardim Sao Luiz <i class="fa-regular fa-copy"></i></p>
         <h3><i class="fa-solid fa-map"></i> Barueri</h3>
