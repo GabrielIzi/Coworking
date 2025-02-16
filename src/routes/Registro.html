@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Coworking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f3f3f3, #e2e2e2);
+        }
+
+        .breadcrumb {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: rgb(1, 160, 35);
+            text-decoration: none;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            max-width: 900px;
+        }
+
+        .logar{
+            text-decoration: none;
+            color: #00a651;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            font-weight: bold;
+        }
+
+        .step.active {
+            border-color: #00a651;
+            color: #00a651;
+        }
+
+        .line {
+            flex: 1;
+            height: 2px;
+            background-color: #000;
+            margin: 20px 10px 5px 10px; 
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group input {
+            flex: 2;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: block;
+            width: 100px;
+            padding: 10px;
+            text-align: center;
+            background-color: #00a651;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-left: auto;
+        }
+
+        .btn:hover {
+            background-color: #007a40;
+        }
+
+        .container img{
+            width: 135px;
+            margin-bottom: 20px;
+            margin-left: 42%;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .btn-voltar{
+            color: #00a651;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .container img{
+                margin-left: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="breadcrumb">
+        <a href="index.html">HOME</a> / Registro
+    </div>
+
+    <div class="container">
+        <img src="logo.png" alt="" class="logo">
+        <div class="steps">
+            <div class="step active" id="step1-indicator">1</div>
+            <div class="line"></div>
+            <div class="step" id="step2-indicator">2</div>
+            <div class="line"></div>
+            <div class="step" id="step3-indicator">3</div>
+        </div>
+
+        <div class="form-step active" id="step1">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo">
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" class="cpf-input" maxlength="14" placeholder="Digite seu CPF">
+            </div>
+            <div class="form-group">
+                <label for="nascimento">Data de Nascimento</label>
+                <input type="date" id="nascimento">
+            </div>
+            <a href="login.html" class="logar">Já tem uma conta?</a>
+            <a href="#" class="btn" onclick="nextStep()">Próximo ></a>
+        </div>
+
+        <div class="form-step" id="step2">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite seu email">
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" placeholder="Digite seu telefone" maxlength="15">
+            </div>
+            <a href="#" class="btn-voltar" onclick="previousStep()">< Voltar</a>
+            <a href="#" class="btn" onclick="nextStep()">Próximo ></a>
+        </div>
+
+        <div class="form-step" id="step3">
+            <div class="form-group">
+                <label for="codigo">Código de Confirmação</label>
+                <input type="text" id="codigo" placeholder="Digite o código enviado para seu email ou telefone">
+            </div>
+            <a href="#" class="btn-voltar" onclick="previousStep()">< Voltar</a>
+            <a href="index.html" class="btn">Confirmar</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('cpf').addEventListener('input', function(e) {
+            let input = e.target.value;
+            input = input.replace(/\D/g, ''); 
+            input = input.replace(/(\d{3})(\d)/, '$1.$2'); 
+            input = input.replace(/(\d{3})(\d)/, '$1.$2'); 
+            input = input.replace(/(\d{3})(\d)/, '$1-$2');
+            e.target.value = input;
+        });
+
+        document.getElementById('codigo').addEventListener('input', function(e) {
+            let input = e.target.value;
+            input = input.replace(/\D/g, ''); 
+            e.target.value = input;
+        });
+
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let input = e.target.value;
+            input = input.replace(/\D/g, ''); 
+            input = input.replace(/(\d{1})(\d)/, '($1$2) '); 
+            input = input.replace(/(\d{5})(\d)/, '$1-$2'); 
+            e.target.value = input;
+        });
+
+        function nextStep() {
+            const currentStep = document.querySelector('.form-step.active');
+            const nextStep = currentStep.nextElementSibling;
+
+            if (nextStep && nextStep.classList.contains('form-step')) {
+                currentStep.classList.remove('active');
+                nextStep.classList.add('active');
+            }
+
+            updateStepIndicator();
+        }
+
+        function previousStep() {
+            const currentStep = document.querySelector('.form-step.active');
+            const previousStep = currentStep.previousElementSibling;
+
+            if (previousStep && previousStep.classList.contains('form-step')) {
+                currentStep.classList.remove('active');
+                previousStep.classList.add('active');
+            }
+
+            updateStepIndicator();
+        }
+
+        function updateStepIndicator() {
+            const stepIndicators = document.querySelectorAll('.step');
+            const activeStepIndex = Array.from(document.querySelectorAll('.form-step')).findIndex(step => step.classList.contains('active'));
+
+            stepIndicators.forEach((indicator, index) => {
+                if (index <= activeStepIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
